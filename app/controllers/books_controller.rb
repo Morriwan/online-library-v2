@@ -27,6 +27,11 @@ class BooksController < ApplicationController
     end
   end
 
+  def isbn_call
+    response = HTTParty.get('https://openlibrary.org/isbn/#{params[:isbn]}')
+    render json: response.body
+  end
+
   private
 
   def book_params
