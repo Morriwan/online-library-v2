@@ -1,5 +1,4 @@
 class BooksController < ApplicationController
-
   def index
     @books = Book.all
   end
@@ -19,18 +18,15 @@ class BooksController < ApplicationController
   end
 
   def create
-    @book = Book.new(book_params)
+    data = LibraryApiService.new(params[:isbn]).call
+    @book = Book.new(data)
     if @book.save
       redirect_to books_path
     else
-      render :new
+      render :index
     end
   end
 
-  def isbn_call
-    response = HTTParty.get('https://openlibrary.org/isbn/#{params[:isbn]}')
-    render json: response.body
-  end
 
   private
 
