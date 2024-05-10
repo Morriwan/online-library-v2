@@ -10,9 +10,10 @@ class LibraryApiService
 
     json_response = JSON.parse(response.body)
     data = {
-      name: json_response["title"],
+      title: json_response["title"],
       isbn: @isbn,
-      author: Author.find_or_create_by(name: json_response["authors"].first["name"]).id,
+      author: author(json_response["authors"][0]["key"]),
+      genre: genre(json_response["subjects"][0]),
     }
 
 
@@ -22,10 +23,14 @@ class LibraryApiService
   private
 
   def author(id)
-    response = HTTParty.get("https://openlibrary.org/authors/#{id}", headers: { 'accept' => 'application/json' })
+    response = HTTParty.get("https://openlibrary.org#{id}", headers: { 'accept' => 'application/json' })
     author_response = JSON.parse(response.body)
+    author = Author.find_or_create_by(name: author_response["name"])
 
+  end
 
+  def genre(name)
+    Genre.find_or_create_by(name: name)
   end
 
 end

@@ -3,17 +3,12 @@
   <ul>
     <% @books.each do |book| %>
       <li><p>Titre de l'oeuvre :</p>
-        <%= book.name %></li>
-      <li><p>Année de publication :</p>
-        <%= book.year %></li>
+        <%= book.title %></li>
       <li><p>Nom de l'auteur :</p>
-        <%= book.author.first_name %>
-        <%= book.author.last_name %>
+        <%= book.author.name %>
         </li>
       <li><p>Genre de l'oeuvre :</p>
         <%= book.genre.name %></li>
-      <li><p>Catégorie :</p>
-        <%= book.category.name %></li>
       <li><p>Numéro ISBN :</p>
       <%= book.isbn %></li>
     <% end %>
