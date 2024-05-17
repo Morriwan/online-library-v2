@@ -1,24 +1,27 @@
-<h1>Bibliothèque</h1>
-<% if @books.any?%>
-  <ul>
-    <% @books.each do |book| %>
-      <li><p>Titre de l'oeuvre :</p>
-        <%= book.title.capitalize %></li>
-      <li><p>Nom de l'auteur :</p>
-        <%= book.author.name %>
-        </li>
-      <li><p>Numéro ISBN :</p>
-      <%= book.isbn %></li>
-    <% end %>
-  </ul>
-<% end %>
+<div class="container">
+  <h1>Bibliothèque</h1>
+  <% if @books.any?%>
+      <% @books.each do |book| %>
+      <div class="cards">
+        <div class="card">
+          <p>Titre de l'oeuvre :
+          <%= book.title.capitalize %></p>
+          <p>Nom de l'auteur :
+          <%= book.author.name %></p>
+          <p>Numéro ISBN :
+          <%= book.isbn %></p>
+        </div>
+      </div>
+      <% end %>
+  <% end %>
 
-<h1>Ajouter un livre à la bibliothèque</h1>
-<%= form_with url: "/books", method: :post do |form| %>
-  <%= form.label :isbn, "Renseigner l'ISBN du livre recherché" %>
-  <%= form.text_field :isbn %>
-  <%= form.submit "Chercher" %>
-<% end %>
+  <h1>Ajouter un livre à la bibliothèque</h1>
+  <%= form_with url: "/books", method: :post do |form| %>
+    <%= form.label :isbn, "Renseigner l'ISBN du livre recherché" %>
+    <%= form.text_field :isbn %>
+    <%= form.submit "Chercher" %>
+  <% end %>
+</div>
 <footer>
   <div class="links">
     <a href="https://www.facebook.com/baptistepxl.garrigues/"><i class="fab fa-fw fa-facebook-f"></i></a>
