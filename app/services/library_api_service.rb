@@ -12,10 +12,8 @@ class LibraryApiService
     data = {
       title: json_response["title"],
       isbn: @isbn,
-      author: author(json_response["authors"][0]["key"]),
-      genre: genre(json_response["subjects"][0]),
+      author: author(json_response["authors"][0]["key"])
     }
-
 
     data
   end
@@ -32,5 +30,4 @@ class LibraryApiService
   def genre(name)
     Genre.find_or_create_by(name: name)
   end
-
 end
