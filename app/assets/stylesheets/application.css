@@ -13,3 +13,34 @@
  *= require_tree .
  *= require_self
  */
+
+ /*Fonts*/
+ @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Poppins:wght@700');
+
+
+ /* Font Awesome */
+@import url('https://use.fontawesome.com/releases/v6.1.2/css/all.css');
+@import url(components/container.css);
+@import url(components/footer.css);
+@import url(components/button.css);
+@import url(components/cards.css);
+
+
+/* Utilities */
+body {
+  margin: 0;
+  font-family: Open Sans;
+  background-color: #8ac6bd;
+}
+
+h1, h2, h3, h4 {
+  font-family: Poppins;
+}
+
+a {
+  text-decoration: none;
+}
+.align-center {
+  display: flex;
+  justify-content: center;
+}

@@ -1,14 +1,12 @@
-<h1>Coucou</h1>
+<h1>Bibliothèque</h1>
 <% if @books.any?%>
   <ul>
     <% @books.each do |book| %>
       <li><p>Titre de l'oeuvre :</p>
-        <%= book.title %></li>
+        <%= book.title.capitalize %></li>
       <li><p>Nom de l'auteur :</p>
         <%= book.author.name %>
         </li>
-      <li><p>Genre de l'oeuvre :</p>
-        <%= book.genre.name %></li>
       <li><p>Numéro ISBN :</p>
       <%= book.isbn %></li>
     <% end %>
@@ -21,3 +19,12 @@
   <%= form.text_field :isbn %>
   <%= form.submit "Chercher" %>
 <% end %>
+<footer>
+  <div class="links">
+    <a href="https://www.facebook.com/baptistepxl.garrigues/"><i class="fab fa-fw fa-facebook-f"></i></a>
+    <a href="https://github.com/Morriwan"><i class="fab fa-fw fa-github"></i></a>
+    <a href="https://www.linkedin.com/in/%20baptiste-garrigues"><i class="fa-brands fa-linkedin"></i></a>
+    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&pp=ygUXbmV2ZXIgZ29ubmEgZ2l2ZSB5b3UgdXA%3D"><i class="fab fa-fw fa-instagram"></i></a>
+    <p>No <i class="fa-solid fa-spaghetti-monster-flying"></i> were harmed during the coding of this page.</p>
+  </div>
+</footer>

@@ -1,0 +1,8 @@
+.container {
+ width: 800px;
+ color: antiquewhite;
+ margin: 0 auto;
+}
+.container h2 {
+  color: black;
+}
