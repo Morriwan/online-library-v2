@@ -1,18 +1,18 @@
 <div class="container">
   <h1>Bibliothèque</h1>
-  <% if @books.any?%>
-      <% @books.each do |book| %>
-      <div class="cards">
-        <div class="card">
-          <p>Titre de l'oeuvre :
-          <%= book.title.capitalize %></p>
-          <p>Nom de l'auteur :
-          <%= book.author.name %></p>
-          <p>Numéro ISBN :
-          <%= book.isbn %></p>
-        </div>
-      </div>
-      <% end %>
+    <div class="cards">
+      <% if @books.any?%>
+          <% @books.each do |book| %>
+            <div class="card">
+              <h1>
+              <%= book.title.capitalize %></h1>
+              <p>
+              <%= book.author.name %></p>
+              <p>ISBN :
+              <%= book.isbn %></p>
+            </div>
+          <% end %>
+    </div>
   <% end %>
 
   <h1>Ajouter un livre à la bibliothèque</h1>
@@ -22,12 +22,12 @@
     <%= form.submit "Chercher" %>
   <% end %>
 </div>
-<footer>
-  <div class="links">
-    <a href="https://www.facebook.com/baptistepxl.garrigues/"><i class="fab fa-fw fa-facebook-f"></i></a>
-    <a href="https://github.com/Morriwan"><i class="fab fa-fw fa-github"></i></a>
-    <a href="https://www.linkedin.com/in/%20baptiste-garrigues"><i class="fa-brands fa-linkedin"></i></a>
-    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&pp=ygUXbmV2ZXIgZ29ubmEgZ2l2ZSB5b3UgdXA%3D"><i class="fab fa-fw fa-instagram"></i></a>
-    <p>No <i class="fa-solid fa-spaghetti-monster-flying"></i> were harmed during the coding of this page.</p>
-  </div>
-</footer>
+  <footer>
+    <div class="links">
+      <a href="https://www.facebook.com/baptistepxl.garrigues/"><i class="fab fa-fw fa-facebook-f"></i></a>
+      <a href="https://github.com/Morriwan"><i class="fab fa-fw fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/%20baptiste-garrigues"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&pp=ygUXbmV2ZXIgZ29ubmEgZ2l2ZSB5b3UgdXA%3D"><i class="fab fa-fw fa-instagram"></i></a>
+      <p>No <i class="fa-solid fa-spaghetti-monster-flying"></i> were harmed during the coding of this page.</p>
+    </div>
+  </footer>
